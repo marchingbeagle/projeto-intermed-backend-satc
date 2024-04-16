@@ -2,19 +2,9 @@ package backendsatc.projetointermedbackendsatc.service;
 
 import backendsatc.projetointermedbackendsatc.model.Pokemon;
 import backendsatc.projetointermedbackendsatc.model.PokemonDTO;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
-
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.Map;
 
 @Service
 public class PokeApiService {
@@ -39,6 +29,7 @@ public class PokeApiService {
         pokemon.setId(pokemonDTO.getId());
         pokemon.setHeight(pokemonDTO.getHeight());
         pokemon.setWeight(pokemonDTO.getWeight());
+
         return pokemon;
     }
 }

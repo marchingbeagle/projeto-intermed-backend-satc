@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service
 public class TeamService {
@@ -22,6 +23,9 @@ public class TeamService {
     public void addPokemonToTeam(String pokemonName) throws InterruptedException, IOException {
         Pokemon pokemon = pokeApiService.getPokemonDetails(pokemonName);
         team.addPokemon(pokemon);
-        System.out.println(team.getPokemons());
+    }
+
+    public List<Pokemon> listTeam()throws IOException, InterruptedException{
+        return team.getPokemons();
     }
 }

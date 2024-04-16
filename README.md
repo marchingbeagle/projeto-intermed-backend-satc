@@ -23,13 +23,40 @@ mvn clean install
 
 ### Endpoints
 
-- a definir
+- "/ajuda"
+- "/team/add"
+- "/team/list"
  
 ### Exemplo de Resposta:
 
-- a definir
+  "/ajuda":
+```json
+{
+    "estudante": "Erik",
+    "projeto": "Pokemon Team Builder - PokeAPI"
+}
+```
+
+  "/team/add":
+```json
+gengar added to the team!
+```
+  "/team/list":
+```json
+{
+    "lista": [
+        {
+            "name": "gengar",
+            "id": 94,
+            "height": 15,
+            "weight": 405
+        }
+    ]
+}
+```
 
 ### Dependências
 
     Spring Boot
     Spring Web
+    Lombok
