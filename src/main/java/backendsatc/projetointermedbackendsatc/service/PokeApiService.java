@@ -2,6 +2,8 @@ package backendsatc.projetointermedbackendsatc.service;
 
 import backendsatc.projetointermedbackendsatc.model.Pokemon;
 import backendsatc.projetointermedbackendsatc.model.PokemonDTO;
+import backendsatc.projetointermedbackendsatc.model.PokemonStat;
+import backendsatc.projetointermedbackendsatc.model.PokemonStatsDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -30,6 +32,7 @@ public class PokeApiService {
         pokemon.setHeight(pokemonDTO.getHeight());
         pokemon.setWeight(pokemonDTO.getWeight());
 
+        pokemon.setStats(pokemonDTO.getStats());
         return pokemon;
     }
 }

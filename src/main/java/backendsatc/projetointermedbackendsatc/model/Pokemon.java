@@ -8,4 +8,5 @@ public class Pokemon {
     private int id;
     private int height;
     private int weight;
+    private PokemonStatsDTO[] stats;
 }

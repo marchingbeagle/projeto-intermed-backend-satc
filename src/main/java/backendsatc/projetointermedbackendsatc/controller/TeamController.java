@@ -21,7 +21,7 @@ public class TeamController {
         if (result){
             return ResponseEntity.ok( pokemonName + " added to the team!");
         } else {
-            return ResponseEntity.ok("Team is already full, pokemon not added");
+            return ResponseEntity.ok("Team is already full, pokemon not added;");
         }
     }
 

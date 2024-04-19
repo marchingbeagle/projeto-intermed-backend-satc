@@ -5,10 +5,6 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PokemonDTO {
+public class PokemonStat {
     private String name;
-    private int id;
-    private int height;
-    private int weight;
-    private PokemonStatsDTO[] stats;
 }
