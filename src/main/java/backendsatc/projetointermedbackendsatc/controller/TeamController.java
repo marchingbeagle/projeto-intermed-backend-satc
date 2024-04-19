@@ -17,8 +17,12 @@ public class TeamController {
 
     @PostMapping("/team/add")
     public ResponseEntity<String> addToTeam(@RequestParam String pokemonName) throws Exception {
-        teamService.addPokemonToTeam(pokemonName);
-        return ResponseEntity.ok( pokemonName + " added to the team!");
+        Boolean result = teamService.addPokemonToTeam(pokemonName);
+        if (result){
+            return ResponseEntity.ok( pokemonName + " added to the team!");
+        } else {
+            return ResponseEntity.ok("Team is already full, pokemon not added");
+        }
     }
 
     @GetMapping("/team/list")

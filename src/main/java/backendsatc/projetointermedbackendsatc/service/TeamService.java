@@ -19,14 +19,14 @@ public class TeamService {
         this.team = new Team();
     }
 
-    public void addPokemonToTeam(String pokemonName) throws Exception {
+    public Boolean addPokemonToTeam(String pokemonName) throws Exception {
         if (team.getPokemons().size() >= 6) {
-            System.out.println("Team is full. Cannot add more Pokémon.");
-            return;
+            return false;
         }
 
         Pokemon pokemon = pokeApiService.getPokemonDetails(pokemonName);
         team.addPokemon(pokemon);
+        return true;
     }
 
     public List<Pokemon> listTeam()throws Exception{
