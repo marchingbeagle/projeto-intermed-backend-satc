@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -17,17 +16,15 @@ public class TeamController {
     private TeamService teamService;
 
     @PostMapping("/team/add")
-    public ResponseEntity<String> addToTeam(@RequestParam String pokemonName) throws IOException, InterruptedException {
+    public ResponseEntity<String> addToTeam(@RequestParam String pokemonName) throws Exception {
         teamService.addPokemonToTeam(pokemonName);
         return ResponseEntity.ok( pokemonName + " added to the team!");
     }
 
     @GetMapping("/team/list")
-    public Object listTeam() throws IOException, InterruptedException{
+    public Object listTeam() throws Exception{
         List<Pokemon> teamList = teamService.listTeam();
-        return new Object(){
-          public List<Pokemon> lista = teamList;
-        };
+        return teamList;
     }
 
     @GetMapping("/ajuda")
